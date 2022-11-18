@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div><br>
+<h1> HOME VIEW</h1>
+  <form action="">
+    <InputField v-model="name"/>
+    <v-btn>click</v-btn>
+  </form>
+  {{name}}
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import InputField from '../components/InputField.vue'
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
+  export default {
+    name: 'HomeView',
+
+    components: {
+      InputField,
+    },
+    data(){
+      return{
+        name:''
+      }
+    }
   }
-}
 </script>

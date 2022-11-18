@@ -1,32 +1,62 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+<h1>VUE.JY</h1>
+
+
+
+    <v-btn><router-link to="/hello">hello</router-link></v-btn>
+    <v-btn><router-link to="/home">home</router-link></v-btn>
+    <v-btn><router-link to="/user">user</router-link></v-btn>
+    <v-btn><router-link to="/about">about</router-link></v-btn>
+    <v-btn><router-link to="/modal"> Modal</router-link> </v-btn>
     <router-view/>
-  </div>
+    </div>
+    
 </template>
 
-<style lang="scss">
+<script>
+// import TestComponent from "@/components/TestView";
+// import HelloWorld from "@/components/HelloWorld";
+
+// import UserInfo from "@/components/UserInfo";
+
+export default {
+  name: 'App',
+  components:{
+    // TestComponent,
+    // HelloWorld
+  // UserInfo
+  },
+  data(){
+      return{
+      num : 0,
+      itemsss : ['a','b','c'],
+      hi : 'color : red',
+      comment : ['안녕','나는','준영'],
+      url: "https://www.naver.com"
+
+    }
+    },
+  methods :{
+   hi1(){
+     this.num++
+   },
+   showDialog(){
+      this.diapatch("@/components/ModalSample",{
+        
+      });
+   }
+}
+}
+</script>
+
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  margin-top: 60px;
 }
 </style>
